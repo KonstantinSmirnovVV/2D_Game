@@ -1,0 +1,15 @@
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\bin\Debug\Int_Game.exe.config
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\bin\Debug\Int_Game.exe
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\bin\Debug\Int_Game.pdb
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\bin\Debug\Interop.WMPLib.dll
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.csproj.AssemblyReference.cache
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Interop.WMPLib.dll
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.csproj.ResolveComReference.cache
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.Form1.resources
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.Properties.Resources.resources
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.csproj.GenerateResource.cache
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.csproj.CoreCompileInputs.cache
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.exe
+C:\Users\Konstantin\Documents\GitHub\Int_Game\Int_Game\obj\Debug\Int_Game.pdb
