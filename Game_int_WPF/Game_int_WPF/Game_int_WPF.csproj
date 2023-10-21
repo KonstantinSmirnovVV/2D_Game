@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="avatar.png" />
+    <None Remove="cinzel_bold.ttf" />
+    <None Remove="cinzel_regular.ttf" />
+    <None Remove="exit.png" />
+    <None Remove="image.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Font\cinzel_bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Font\cinzel_regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="avatar.png" />
+    <Resource Include="exit.png" />
+    <Resource Include="image.png" />
+  </ItemGroup>
+
+</Project>
