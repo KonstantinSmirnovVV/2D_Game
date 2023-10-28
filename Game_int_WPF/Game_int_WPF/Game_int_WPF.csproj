@@ -12,7 +12,11 @@
     <None Remove="cinzel_bold.ttf" />
     <None Remove="cinzel_regular.ttf" />
     <None Remove="exit.png" />
-    <None Remove="image.png" />
+    <None Remove="exit2.png" />
+    <None Remove="Name_game.png" />
+    <None Remove="Name_game2.png" />
+    <None Remove="Setting.png" />
+    <None Remove="Start_game.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,7 +31,23 @@
   <ItemGroup>
     <Resource Include="avatar.png" />
     <Resource Include="exit.png" />
-    <Resource Include="image.png" />
+    <Resource Include="exit2.png" />
+    <Resource Include="Name_game.png" />
+    <Resource Include="Name_game2.png" />
+    <Resource Include="Setting.png" />
+    <Resource Include="Start_game.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="interface_video.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="interface_video2.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="resources\interface_video.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

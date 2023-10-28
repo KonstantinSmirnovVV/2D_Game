@@ -27,9 +27,15 @@ namespace Game_int_WPF
             InitializeComponent();
             DoubleAnimation dblAnim = new DoubleAnimation();
             dblAnim.From = 0.0;
-            dblAnim.To = 1;
+            dblAnim.To = 0.91;
             dblAnim.Duration = new Duration(TimeSpan.FromMilliseconds(8000));
             image_button_exit.BeginAnimation(Image.OpacityProperty, dblAnim);
+            Nickname.BeginAnimation(Label.OpacityProperty, dblAnim);
+            Avatar.BeginAnimation(Image.OpacityProperty, dblAnim);
+            Name_game.BeginAnimation(Image.OpacityProperty, dblAnim);
+            Setting.BeginAnimation(Image.OpacityProperty, dblAnim);
+            Start_game.BeginAnimation(Image.OpacityProperty, dblAnim);
+
         }
 
         private void image_button_exit_MouseDown(object sender, MouseButtonEventArgs e)
@@ -39,8 +45,27 @@ namespace Game_int_WPF
 
         private void Intro_MediaEnded(object sender, RoutedEventArgs e)
         {
-            Intro.Position = new TimeSpan(0, 0, 1);
-            Intro.Play();
+            // Intro.Position = new TimeSpan(0, 0, 1);
+            //Intro.Play();
+
+
+            Intro.Stop();
+            Intro.Visibility = Visibility.Collapsed;
+
+            Intro_2.Position = new TimeSpan(0, 0, 0);
+            Intro_2.Play();
+            Intro_2.Visibility = Visibility.Visible;
+        }
+
+        private void Intro_2_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            Intro_2.Position = new TimeSpan(0, 0, 0);
+            Intro_2.Play();
+        }
+
+        private void Intro_2_MediaOpened(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 

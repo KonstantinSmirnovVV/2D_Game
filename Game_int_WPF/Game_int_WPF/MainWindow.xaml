@@ -9,57 +9,53 @@
         WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
     <Window.Resources>
 
+        <!--  Анимация зума кнопок -->
+        <Style x:Key="ZoomedImageStyle" TargetType="Image">
+            <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1.0" ScaleY="1.0" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.1" Duration="0:0:0.3" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.1" Duration="0:0:0.3" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" To="1.0" Duration="0:0:0.3" />
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" To="1.0" Duration="0:0:0.3" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
     </Window.Resources>
 
-    <Grid>
+    <Grid Width="1600" Height="900">
 
-        <MediaElement x:Name="Intro" Grid.Row="0" Panel.ZIndex="1" 
-                      Source="C:\Users\Konstantin\Documents\GitHub\Ресурсы\intro2.mp4" 
-                      Stretch="Fill" UnloadedBehavior="Manual" MediaEnded="Intro_MediaEnded" >
-        </MediaElement>
+        <!-- Видео на заставке -->
+        <MediaElement x:Name="Intro" Grid.Row="0" 
+                      Source="resources\interface_video.mp4" 
+                      Stretch="Fill" UnloadedBehavior="Manual" MediaEnded="Intro_MediaEnded" LoadedBehavior="Play"  />
 
 
-        <Image x:Name="image_button_exit"  Panel.ZIndex="2" Margin="652,0,0,201" 
-               Width="212" Source="/exit.png" 
-               Stretch="Fill" RenderTransformOrigin="0.5,1" MouseDown="image_button_exit_MouseDown"  
-                Opacity="0.9" HorizontalAlignment="Left" Height="119" VerticalAlignment="Bottom"  >
-            <Image.Style>
-                <Style TargetType="Image">
-                    <Setter Property="RenderTransform">
-                        <Setter.Value>
-                            <ScaleTransform/>
-                        </Setter.Value>
-                    </Setter>
-                    <Style.Triggers>
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
-                                                     To="1.2" Duration="0:0:0.2"/>
-                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
-                                                     To="1.2" Duration="0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX"
-                                                     To="1" Duration="0:0:0.2"/>
-                                    <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY"
-                                                     To="1" Duration="0:0:0.2"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Image.Style>
 
+        <Image x:Name="image_button_exit"  Panel.ZIndex="2" Margin="713,611,0,0"  Style="{StaticResource ZoomedImageStyle}"
+               Width="140" Source="/exit2.png" RenderTransformOrigin="0.5,1" MouseDown="image_button_exit_MouseDown"
+               HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" StretchDirection="DownOnly" Opacity="0.9"  >
         </Image>
 
 
         <Image x:Name="Avatar" Height="128" Margin="0,10,38,0" VerticalAlignment="Top" 
-               Panel.ZIndex="2" Stretch="Fill" Source="/avatar.png" HorizontalAlignment="Right" Width="228" Opacity="0.6" >
+               Panel.ZIndex="2" Stretch="Fill" Source="/avatar.png" HorizontalAlignment="Right" Width="228" Opacity="0" >
             <Image.Clip>
                 <EllipseGeometry RadiusX="97" RadiusY="50" Center="114,64" />
             </Image.Clip>
@@ -68,7 +64,7 @@
 
         <Label x:Name="Nickname" Content="Konstantin" Margin="0,84,10,0" VerticalAlignment="Top" 
                Height="64" FontSize="36" FontFamily="Cinzel(RUS BY LYAJKA)"
-               Panel.ZIndex="6" HorizontalAlignment="Right" Width="284" Opacity="0.8"
+               Panel.ZIndex="6" HorizontalAlignment="Right" Width="284" Opacity="0"
                HorizontalContentAlignment="Center" RenderTransformOrigin="0.5,0.484" Background="{x:Null}">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -89,9 +85,22 @@
                     <GradientStop Color="#FF804A4A" Offset="1"/>
                 </LinearGradientBrush>
             </Label.BorderBrush>
-
-
         </Label>
+
+
+        <Image x:Name="Name_game" HorizontalAlignment="Left" Height="356" Margin="336,-75,0,0" 
+               VerticalAlignment="Top" Width="852" Panel.ZIndex="3" Source="/Name_game2.png" Opacity="0" Stretch="UniformToFill"/>
+
+        <Image x:Name="Setting" HorizontalAlignment="Left" Height="58" Margin="691,476,0,0" Style="{StaticResource ZoomedImageStyle}"
+               VerticalAlignment="Top" Width="190" Panel.ZIndex="4" Source="/Setting.png" Opacity="0.9"/>
+
+        <Image x:Name="Start_game" HorizontalAlignment="Left" Height="73" Margin="623,341,0,0"  Style="{StaticResource ZoomedImageStyle}"
+               VerticalAlignment="Top" Width="321" Panel.ZIndex="4" Source="/Start_game.png" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill" StretchDirection="DownOnly" Opacity="0.9">
+        </Image>
+
+        <MediaElement x:Name="Intro_2" HorizontalAlignment="Center" Height="900" LoadedBehavior="Play"
+                      VerticalAlignment="Center" Width="1600" Source="interface_video2.mp4" Stretch="Fill" 
+                      UnloadedBehavior="Manual" Panel.ZIndex="1" Visibility="Collapsed" MediaEnded="Intro_2_MediaEnded" MediaOpened="Intro_2_MediaOpened"/>
 
     </Grid>
 </Window>
