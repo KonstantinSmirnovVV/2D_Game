@@ -20,6 +20,8 @@ namespace Game_int_WPF
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -66,6 +68,34 @@ namespace Game_int_WPF
         private void Intro_2_MediaOpened(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void MediaElement_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            Music_intro.Position = new TimeSpan(0,0,0);
+            Music_intro.Play();
+        }
+
+        private void Music_intro_MediaOpened(object sender, RoutedEventArgs e)
+        {
+            Music_intro.Volume = 0.4;
+
+        }
+
+        private void Setting_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Setting_Window.Visibility = Visibility.Visible;
+            image_button_exit.Visibility = Visibility.Collapsed;
+            Setting.Visibility = Visibility.Collapsed;
+            Start_game.Visibility = Visibility.Collapsed;
+        }
+
+        private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Setting_Window.Visibility = Visibility.Collapsed;
+            image_button_exit.Visibility = Visibility.Visible;
+            Setting.Visibility = Visibility.Visible;
+            Start_game.Visibility = Visibility.Visible;
         }
     }
 

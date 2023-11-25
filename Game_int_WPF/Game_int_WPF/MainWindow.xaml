@@ -37,6 +37,154 @@
             </Style.Triggers>
         </Style>
 
+        <!--  Гроуп бокс -->
+        <Style TargetType="GroupBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="GroupBox">
+                        <Border CornerRadius="8" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="7" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Border x:Name="Header" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0,0,0,0" Padding="3" Grid.Row="0">
+                                    <ContentPresenter ContentSource="Header" RecognizesAccessKey="True"/>
+                                </Border>
+                                <ContentPresenter ContentSource="Content" Margin="{TemplateBinding Padding}" Grid.Row="1"/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="RoundedLabelStyle" TargetType="Label">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="10">
+                            <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="52"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="56" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="52" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="CombinedLabelStyle" TargetType="Label">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="BorderBrush" Value="DarkBlue"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="42"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="46" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="42" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="CombinedLabelStyle2" TargetType="Label">
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="48"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Border Background="{TemplateBinding Background}" 
+                BorderBrush="{TemplateBinding BorderBrush}" 
+                BorderThickness="{TemplateBinding BorderThickness}" 
+                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="51" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="FontSize" To="48" Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+
     </Window.Resources>
 
     <Grid Width="1600" Height="900">
@@ -44,14 +192,13 @@
         <!-- Видео на заставке -->
         <MediaElement x:Name="Intro" Grid.Row="0" 
                       Source="resources\interface_video.mp4" 
-                      Stretch="Fill" UnloadedBehavior="Manual" MediaEnded="Intro_MediaEnded" LoadedBehavior="Play"  />
+                      Stretch="Fill" UnloadedBehavior="Manual" MediaEnded="Intro_MediaEnded" LoadedBehavior="Play" Volume="0"  />
 
 
-
-        <Image x:Name="image_button_exit"  Panel.ZIndex="2" Margin="713,611,0,0"  Style="{StaticResource ZoomedImageStyle}"
+        <!--  Кнопки главного меню и аватар и имя пользователя -->
+        <Image x:Name="image_button_exit"  Panel.ZIndex="2" Margin="713,601,0,0"  Style="{StaticResource ZoomedImageStyle}"
                Width="140" Source="/exit2.png" RenderTransformOrigin="0.5,1" MouseDown="image_button_exit_MouseDown"
-               HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" StretchDirection="DownOnly" Opacity="0.9"  >
-        </Image>
+               HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" StretchDirection="DownOnly" Opacity="0"  />
 
 
         <Image x:Name="Avatar" Height="128" Margin="0,10,38,0" VerticalAlignment="Top" 
@@ -92,15 +239,266 @@
                VerticalAlignment="Top" Width="852" Panel.ZIndex="3" Source="/Name_game2.png" Opacity="0" Stretch="UniformToFill"/>
 
         <Image x:Name="Setting" HorizontalAlignment="Left" Height="58" Margin="691,476,0,0" Style="{StaticResource ZoomedImageStyle}"
-               VerticalAlignment="Top" Width="190" Panel.ZIndex="4" Source="/Setting.png" Opacity="0.9"/>
+         VerticalAlignment="Top" Width="190" Panel.ZIndex="4" Source="/Setting.png" Opacity="0" MouseLeftButtonDown="Setting_MouseLeftButtonDown"/>
 
         <Image x:Name="Start_game" HorizontalAlignment="Left" Height="73" Margin="623,341,0,0"  Style="{StaticResource ZoomedImageStyle}"
-               VerticalAlignment="Top" Width="321" Panel.ZIndex="4" Source="/Start_game.png" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill" StretchDirection="DownOnly" Opacity="0.9">
-        </Image>
+               VerticalAlignment="Top" Width="321" Panel.ZIndex="4" Source="/Start_game.png" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill" StretchDirection="DownOnly" Opacity="0"/>
 
+        <!--  Вспомогательный видеоролик -->
         <MediaElement x:Name="Intro_2" HorizontalAlignment="Center" Height="900" LoadedBehavior="Play"
                       VerticalAlignment="Center" Width="1600" Source="interface_video2.mp4" Stretch="Fill" 
-                      UnloadedBehavior="Manual" Panel.ZIndex="1" Visibility="Collapsed" MediaEnded="Intro_2_MediaEnded" MediaOpened="Intro_2_MediaOpened"/>
+                      UnloadedBehavior="Manual" Panel.ZIndex="1" Visibility="Collapsed" MediaEnded="Intro_2_MediaEnded"
+                      MediaOpened="Intro_2_MediaOpened" Volume="0" />
+
+        <!--  Мелодия главного меню -->
+        <MediaElement x:Name="Music_intro" HorizontalAlignment="Left" Height="100" Margin="1501,793,0,0" 
+                      VerticalAlignment="Top" Width="100" Source="intro.mp3" 
+                      MediaEnded="MediaElement_MediaEnded" Position="00:00:16.5000000" MediaOpened="Music_intro_MediaOpened" UnloadedBehavior="Manual"/>
+
+        <!--  Меню настроек -->
+        <GroupBox x:Name="Setting_Window" Header="_" Margin="319,155,319,35" Panel.ZIndex="7" Background="#00806F51"
+                  Foreground="#00000000">
+            <GroupBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1C2636"/>
+                    <GradientStop Color="#FFD49F7B" Offset="1"/>
+                    <GradientStop Color="#FF4A464F" Offset="0.556"/>
+                </LinearGradientBrush>
+            </GroupBox.BorderBrush>
+
+            <StackPanel Height="315">
+
+                <Label Content="Setting" Width="386" FontSize="72" FontFamily="Cinzel(RUS BY LYAJKA)" Height="104" Panel.ZIndex="8" ScrollViewer.VerticalScrollBarVisibility="Hidden" VerticalContentAlignment="Stretch" UseLayoutRounding="False" HorizontalContentAlignment="Center" SnapsToDevicePixels="True" HorizontalAlignment="Center" FontWeight="Bold">
+                    <Label.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#F2000000"/>
+                            <GradientStop Color="#CC3D3E4E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Label.Foreground>
+                </Label>
+
+                <Grid>
+
+
+                    <TextBox x:Name="up_cntrl" Margin="758,0,32,93" TextWrapping="Wrap" Text="w" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" SelectionTextBrush="{x:Null}" SelectionBrush="#FF6D8237" RenderTransformOrigin="1,0.5" Height="64" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="9"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#4CAB714C"/>
+                                <GradientStop Color="#232A2D3C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+
+
+
+                    <TextBox x:Name="left_cntrl" TextWrapping="Wrap" Text="A" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Margin="758,113,32,15" Panel.ZIndex="8" RenderTransformOrigin="1,0.5" Height="65">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="9"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#4CAB714C"/>
+                                <GradientStop Color="#232A2D3C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBox x:Name="right_cntrl" TextWrapping="Wrap" Text="d" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" HorizontalAlignment="Right" Margin="0,194,32,-66" RenderTransformOrigin="1,0.5" Height="65">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="9"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#4CAB714C"/>
+                                <GradientStop Color="#232A2D3C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBox x:Name="jump_cntrl" TextWrapping="Wrap" Text="space" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" Margin="0,358,32,-230" HorizontalAlignment="Right" RenderTransformOrigin="1,0.5" Height="65">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="9"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#4CAB714C"/>
+                                <GradientStop Color="#232A2D3C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBox x:Name="fire_cntrl" TextWrapping="Wrap" Text="f" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" HorizontalAlignment="Right" Margin="0,276,32,-147" RenderTransformOrigin="1,0.5" Height="65">
+                        <TextBox.Resources>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="CornerRadius" Value="9"/>
+                            </Style>
+                        </TextBox.Resources>
+                        <TextBox.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#4CAB714C"/>
+                                <GradientStop Color="#232A2D3C" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <Label Content="Up" HorizontalAlignment="Left" Margin="448,32,0,0" VerticalAlignment="Top" Height="64" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0.994"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+
+                    <Label Content="Left" Margin="448,111,310,17" Height="65" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0.768"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+
+                    <Label Content="Right" Margin="448,193,310,-65" Height="65" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Width="190">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0.553"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+
+                    <Label Content="Fire" Margin="448,272,310,-145" Height="65" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0.315"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+
+                    <Label Content="Jump" Margin="448,346,310,-233" Height="80" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+
+                    <Label x:Name="Back_menu" Content="Back" Margin="20,472,738,-359" Height="80"
+                           Width="190" FontSize="42" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
+                           VerticalContentAlignment="Center" FontWeight="Bold" MouseLeftButtonDown="Label_MouseLeftButtonDown"
+                           Style="{StaticResource CombinedLabelStyle}">
+                        <Label.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.BorderBrush>
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#19E5E4D0"/>
+                                <GradientStop Color="#19060E18" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#E5231919"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+                    
+                    <Label x:Name="Apply_settings" Content="Apply" Margin="736,472,22,-359" Height="80"
+                        Width="190" FontSize="42" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center" FontWeight="Bold"
+                        Style="{StaticResource CombinedLabelStyle}">
+                        <Label.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.BorderBrush>
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#19E5E4D0"/>
+                                <GradientStop Color="#19060E18" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#E5231919"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+
+                    </Label>
+                    <Label x:Name="El_Cntrl" Content="Conntroling" Margin="20,106,537,8" Height="80" FontSize="48" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center" FontWeight="Bold"
+                        Style="{StaticResource CombinedLabelStyle2}">
+                        <Label.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.BorderBrush>
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#19E5E4D0"/>
+                                <GradientStop Color="#19060E18" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#E5231919" Offset="0.476"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+
+                    <Label x:Name="El_music" Content="Music" Margin="20,214,537,-100" Height="80" FontSize="48" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center" FontWeight="Bold" 
+                        Style="{StaticResource CombinedLabelStyle2}">
+                        <Label.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="White" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.BorderBrush>
+                        <Label.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#19E5E4D0"/>
+                                <GradientStop Color="#19060E18" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Background>
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#E5231919" Offset="0.63"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+
+                    </Label>
+
+
+
+
+                </Grid>
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
 </Window>

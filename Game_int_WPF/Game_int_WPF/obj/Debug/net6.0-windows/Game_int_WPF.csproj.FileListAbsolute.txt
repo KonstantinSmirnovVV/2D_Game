@@ -24,3 +24,4 @@ C:\Users\Konstantin\Documents\GitHub\Game_int_WPF\Game_int_WPF\obj\Debug\net6.0-
 C:\Users\Konstantin\Documents\GitHub\Game_int_WPF\Game_int_WPF\bin\Debug\net6.0-windows\interface_video.mp4
 C:\Users\Konstantin\Documents\GitHub\Game_int_WPF\Game_int_WPF\bin\Debug\net6.0-windows\resources\interface_video.mp4
 C:\Users\Konstantin\Documents\GitHub\Game_int_WPF\Game_int_WPF\bin\Debug\net6.0-windows\interface_video2.mp4
+C:\Users\Konstantin\Documents\GitHub\Game_int_WPF\Game_int_WPF\bin\Debug\net6.0-windows\intro.mp3
