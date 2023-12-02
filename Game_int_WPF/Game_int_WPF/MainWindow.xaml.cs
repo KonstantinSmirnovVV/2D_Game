@@ -24,6 +24,7 @@ namespace Game_int_WPF
 
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -96,6 +97,64 @@ namespace Game_int_WPF
             image_button_exit.Visibility = Visibility.Visible;
             Setting.Visibility = Visibility.Visible;
             Start_game.Visibility = Visibility.Visible;
+        }
+
+        private void El_Cntrl_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            El_music.Background.Opacity = 0;
+            El_Cntrl.Background.Opacity = 100;
+
+            lb_up.Visibility = Visibility.Visible;
+            lb_left.Visibility = Visibility.Visible;
+            lb_right.Visibility = Visibility.Visible;
+            lb_fire.Visibility = Visibility.Visible;
+            lb_jump.Visibility = Visibility.Visible;
+
+            cntrl_up.Visibility = Visibility.Visible;
+            cntrl_left.Visibility = Visibility.Visible;
+            cntrl_right.Visibility = Visibility.Visible;
+            cntrl_fire.Visibility = Visibility.Visible;
+            cntrl_jump.Visibility = Visibility.Visible;
+
+            lb_total_volume.Visibility = Visibility.Collapsed;
+            sld_total_volume.Visibility = Visibility.Collapsed;
+            tb_percent_total_volume.Visibility = Visibility.Collapsed;
+            lb_music.Visibility = Visibility.Collapsed;
+            sld_music.Visibility = Visibility.Collapsed;
+            tb_percent_music.Visibility = Visibility.Collapsed;
+            lb_sound_effects.Visibility = Visibility.Collapsed;
+            sld_sound_effects.Visibility = Visibility.Collapsed;
+            tb_percent_sound_effects.Visibility = Visibility.Collapsed;
+
+
+        }
+
+        private void El_music_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            El_music.Background.Opacity = 100;
+            El_Cntrl.Background.Opacity = 0;
+
+            lb_up.Visibility = Visibility.Collapsed;
+            lb_left.Visibility = Visibility.Collapsed;
+            lb_right.Visibility = Visibility.Collapsed;
+            lb_fire.Visibility = Visibility.Collapsed;
+            lb_jump.Visibility = Visibility.Collapsed;
+
+            cntrl_up.Visibility = Visibility.Collapsed;
+            cntrl_left.Visibility = Visibility.Collapsed;
+            cntrl_right.Visibility = Visibility.Collapsed;
+            cntrl_fire.Visibility = Visibility.Collapsed;
+            cntrl_jump.Visibility = Visibility.Collapsed;
+
+            lb_total_volume.Visibility = Visibility.Visible;
+            sld_total_volume.Visibility = Visibility.Visible;
+            tb_percent_total_volume.Visibility = Visibility.Visible;
+            lb_music.Visibility = Visibility.Visible;
+            sld_music.Visibility = Visibility.Visible;
+            tb_percent_music.Visibility = Visibility.Visible;
+            lb_sound_effects.Visibility = Visibility.Visible;
+            sld_sound_effects.Visibility = Visibility.Visible;
+            tb_percent_sound_effects.Visibility = Visibility.Visible;
         }
     }
 

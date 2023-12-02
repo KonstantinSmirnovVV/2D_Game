@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Game_int_WPF"
         mc:Ignorable="d"
         Title="Game" 
-        WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized">
+        WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized" Icon="/icon.ico">
     <Window.Resources>
 
         <!--  Анимация зума кнопок -->
@@ -184,6 +184,41 @@
         </Style>
 
 
+        <Style x:Key="CustomSlider" TargetType="Slider">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Slider">
+                        <Grid>
+                            <Rectangle x:Name="PART_GradientRectangle" Width="228" Height="20">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{Binding Path=Foreground.Color, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Offset="0"/>
+                                        <GradientStop Color="{Binding Path=Background.Color, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                                <Rectangle.RadiusX>10</Rectangle.RadiusX>
+                                <Rectangle.RadiusY>10</Rectangle.RadiusY>
+                            </Rectangle>
+                            <Track x:Name="PART_Track" Grid.Row="1" Focusable="false">
+                                <Track.Thumb>
+                                    <Thumb x:Name="Thumb" Height="40" Width="40" Background="{TemplateBinding Foreground}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1">
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Grid>
+                                                    <Image Source="C:\Users\Konstantin\Documents\GitHub\Game_int_WPF\Game_int_WPF\g11.png"  Stretch="UniformToFill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
 
     </Window.Resources>
 
@@ -257,7 +292,7 @@
 
         <!--  Меню настроек -->
         <GroupBox x:Name="Setting_Window" Header="_" Margin="319,155,319,35" Panel.ZIndex="7" Background="#00806F51"
-                  Foreground="#00000000">
+                  Foreground="#00000000" Visibility="Collapsed">
             <GroupBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1C2636"/>
@@ -280,7 +315,7 @@
                 <Grid>
 
 
-                    <TextBox x:Name="up_cntrl" Margin="758,0,32,93" TextWrapping="Wrap" Text="w" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" SelectionTextBrush="{x:Null}" SelectionBrush="#FF6D8237" RenderTransformOrigin="1,0.5" Height="64" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                    <TextBox x:Name="cntrl_up" Margin="758,0,32,93" TextWrapping="Wrap" Text="w" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" SelectionTextBrush="{x:Null}" SelectionBrush="#FF6D8237" RenderTransformOrigin="1,0.5" Height="64" VerticalAlignment="Bottom" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="9"/>
@@ -297,7 +332,7 @@
 
 
 
-                    <TextBox x:Name="left_cntrl" TextWrapping="Wrap" Text="A" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Margin="758,113,32,15" Panel.ZIndex="8" RenderTransformOrigin="1,0.5" Height="65">
+                    <TextBox x:Name="cntrl_left" TextWrapping="Wrap" Text="A" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Margin="758,113,32,15" Panel.ZIndex="8" RenderTransformOrigin="1,0.5" Height="65">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="9"/>
@@ -311,7 +346,7 @@
                         </TextBox.Background>
                     </TextBox>
 
-                    <TextBox x:Name="right_cntrl" TextWrapping="Wrap" Text="d" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" HorizontalAlignment="Right" Margin="0,194,32,-66" RenderTransformOrigin="1,0.5" Height="65">
+                    <TextBox x:Name="cntrl_right" TextWrapping="Wrap" Text="d" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" HorizontalAlignment="Right" Margin="0,194,32,-66" RenderTransformOrigin="1,0.5" Height="65">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="9"/>
@@ -325,7 +360,7 @@
                         </TextBox.Background>
                     </TextBox>
 
-                    <TextBox x:Name="jump_cntrl" TextWrapping="Wrap" Text="space" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" Margin="0,358,32,-230" HorizontalAlignment="Right" RenderTransformOrigin="1,0.5" Height="65">
+                    <TextBox x:Name="cntrl_jump" TextWrapping="Wrap" Text="space" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" Margin="0,358,32,-230" HorizontalAlignment="Right" RenderTransformOrigin="1,0.5" Height="65">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="9"/>
@@ -339,7 +374,7 @@
                         </TextBox.Background>
                     </TextBox>
 
-                    <TextBox x:Name="fire_cntrl" TextWrapping="Wrap" Text="f" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" HorizontalAlignment="Right" Margin="0,276,32,-147" RenderTransformOrigin="1,0.5" Height="65">
+                    <TextBox x:Name="cntrl_fire" TextWrapping="Wrap" Text="f" Width="160" FontFamily="Cinzel(RUS BY LYAJKA)" FontSize="48" TextAlignment="Center" Panel.ZIndex="8" HorizontalAlignment="Right" Margin="0,276,32,-147" RenderTransformOrigin="1,0.5" Height="65">
                         <TextBox.Resources>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="CornerRadius" Value="9"/>
@@ -353,7 +388,7 @@
                         </TextBox.Background>
                     </TextBox>
 
-                    <Label Content="Up" HorizontalAlignment="Left" Margin="448,32,0,0" VerticalAlignment="Top" Height="64" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                    <Label x:Name="lb_up" Content="Up" HorizontalAlignment="Left" Margin="448,32,0,0" VerticalAlignment="Top" Height="64" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
                         <Label.Foreground>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0.994"/>
@@ -362,7 +397,7 @@
                         </Label.Foreground>
                     </Label>
 
-                    <Label Content="Left" Margin="448,111,310,17" Height="65" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                    <Label x:Name="lb_left" Content="Left" Margin="448,111,310,17" Height="65" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
                         <Label.Foreground>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0.768"/>
@@ -371,7 +406,7 @@
                         </Label.Foreground>
                     </Label>
 
-                    <Label Content="Right" Margin="448,193,310,-65" Height="65" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Width="190">
+                    <Label x:Name="lb_right" Content="Right" Margin="448,193,310,-65" Height="65" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Width="190">
                         <Label.Foreground>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0.553"/>
@@ -380,7 +415,7 @@
                         </Label.Foreground>
                     </Label>
 
-                    <Label Content="Fire" Margin="448,272,310,-145" Height="65" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                    <Label x:Name="lb_fire" Content="Fire" Margin="448,272,310,-145" Height="65" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
                         <Label.Foreground>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0.315"/>
@@ -389,7 +424,7 @@
                         </Label.Foreground>
                     </Label>
 
-                    <Label Content="Jump" Margin="448,346,310,-233" Height="80" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
+                    <Label x:Name="lb_jump" Content="Jump" Margin="448,346,310,-233" Height="80" Width="190" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold">
                         <Label.Foreground>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black" Offset="0"/>
@@ -421,7 +456,7 @@
                             </LinearGradientBrush>
                         </Label.Foreground>
                     </Label>
-                    
+
                     <Label x:Name="Apply_settings" Content="Apply" Margin="736,472,22,-359" Height="80"
                         Width="190" FontSize="42" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center" FontWeight="Bold"
@@ -446,9 +481,9 @@
                         </Label.Foreground>
 
                     </Label>
-                    <Label x:Name="El_Cntrl" Content="Conntroling" Margin="20,106,537,8" Height="80" FontSize="48" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
+                    <Label x:Name="El_Cntrl" Content="Controling" Margin="20,106,537,8" Height="80" FontSize="48" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center" FontWeight="Bold"
-                        Style="{StaticResource CombinedLabelStyle2}">
+                        Style="{StaticResource CombinedLabelStyle2}"  MouseLeftButtonDown="El_Cntrl_MouseLeftButtonDown">
                         <Label.BorderBrush>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black"/>
@@ -471,7 +506,7 @@
 
                     <Label x:Name="El_music" Content="Music" Margin="20,214,537,-100" Height="80" FontSize="48" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center" FontWeight="Bold" 
-                        Style="{StaticResource CombinedLabelStyle2}">
+                        Style="{StaticResource CombinedLabelStyle2}" MouseLeftButtonDown="El_music_MouseLeftButtonDown">
                         <Label.BorderBrush>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                 <GradientStop Color="Black"/>
@@ -479,8 +514,8 @@
                             </LinearGradientBrush>
                         </Label.BorderBrush>
                         <Label.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#19E5E4D0"/>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.1">
+                                <GradientStop Color="#19E5E4D0" Offset="0.003"/>
                                 <GradientStop Color="#19060E18" Offset="1"/>
                             </LinearGradientBrush>
                         </Label.Background>
@@ -492,6 +527,95 @@
                         </Label.Foreground>
 
                     </Label>
+
+
+                    <Slider x:Name="sld_total_volume" HorizontalAlignment="Left" Margin="516,83,0,0" VerticalAlignment="Top" Width="260" Height="50"
+                            Style="{StaticResource CustomSlider}" Foreground="#4CD09D79" Background="#990A0F1E" Focusable="False" Value="50" Maximum="100" IsSnapToTickEnabled="True" Visibility="Collapsed">
+                        <Slider.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF554449" Offset="0.2"/>
+                            </LinearGradientBrush>
+                        </Slider.BorderBrush>
+                    </Slider>
+
+                    <Label x:Name="lb_total_volume" Content="Total volume" HorizontalAlignment="Left" Margin="456,9,0,0" VerticalAlignment="Top" Height="64" Width="412" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Visibility="Collapsed">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0.994"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+
+                    <TextBox x:Name="tb_percent_total_volume" HorizontalAlignment="Left" Margin="783,82,0,0" TextWrapping="Wrap" Focusable="False"
+                             Text="{Binding Value, ElementName=sld_total_volume, Mode=TwoWay, StringFormat=\{0\}%}" VerticalAlignment="Top" Width="100" Background="{x:Null}"
+                             FontSize="36" FontFamily="Cinzel(RUS BY LYAJKA)" Height="40" BorderBrush="{x:Null}" FontWeight="Bold" TextAlignment="Center" IsReadOnly="True" IsHitTestVisible="False" Visibility="Collapsed">
+                        <TextBox.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF2E3649" Offset="0.08"/>
+                                <GradientStop Color="#FFE5E4D0" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Foreground>
+                    </TextBox>
+
+
+                    <Label x:Name="lb_music" Content="Music" Margin="456,128,80,4" Height="64" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Background="#00000000" Visibility="Collapsed">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0.486"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+                    <Slider x:Name="sld_music" Margin="516,211,172,-65" Width="260" Height="50"
+                        Style="{StaticResource CustomSlider}" Foreground="#4CD09D79" Background="#990A0F1E" Focusable="False" Value="50" Maximum="100" IsSnapToTickEnabled="True" Visibility="Collapsed">
+                        <Slider.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF554449" Offset="0.2"/>
+                            </LinearGradientBrush>
+                        </Slider.BorderBrush>
+                    </Slider>
+                    <TextBox x:Name="tb_percent_music" Margin="783,211,65,-55" TextWrapping="Wrap" Focusable="False"
+                        Text="{Binding Value, ElementName=sld_music, Mode=TwoWay, StringFormat=\{0\}%}" Width="100" Background="{x:Null}"
+                        FontSize="36" FontFamily="Cinzel(RUS BY LYAJKA)" Height="40" BorderBrush="{x:Null}" FontWeight="Bold" TextAlignment="Center" IsReadOnly="True" IsHitTestVisible="False" Visibility="Collapsed">
+                        <TextBox.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF2E3649" Offset="0.08"/>
+                                <GradientStop Color="#FFE5E4D0" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Foreground>
+                    </TextBox>
+
+
+                    <Label x:Name="lb_sound_effects" Content="sound effects" Margin="456,264,80,-132" Height="64" FontSize="52" FontFamily="Cinzel(RUS BY LYAJKA)" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Visibility="Collapsed">
+                        <Label.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black" Offset="0"/>
+                                <GradientStop Color="#FFD39E7A" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Label.Foreground>
+                    </Label>
+                    <Slider x:Name="sld_sound_effects" Margin="516,353,172,-207" Width="260" Height="50" 
+                        Style="{StaticResource CustomSlider}" Foreground="#4CD09D79" Background="#990A0F1E" Focusable="False" Value="50" Maximum="100" IsSnapToTickEnabled="True" Visibility="Collapsed">
+                        <Slider.BorderBrush>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Black"/>
+                                <GradientStop Color="#FF554449" Offset="0.2"/>
+                            </LinearGradientBrush>
+                        </Slider.BorderBrush>
+                    </Slider>
+                    <TextBox x:Name="tb_percent_sound_effects" Margin="783,353,65,-197" TextWrapping="Wrap" Focusable="False"
+                        Text="{Binding Value, ElementName=sld_sound_effects, Mode=TwoWay, StringFormat=\{0\}%}" Width="100" Background="{x:Null}"
+                        FontSize="36" FontFamily="Cinzel(RUS BY LYAJKA)" Height="40" BorderBrush="{x:Null}" FontWeight="Bold" TextAlignment="Center" IsReadOnly="True" IsHitTestVisible="False" Visibility="Collapsed">
+                        <TextBox.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF2E3649" Offset="0.08"/>
+                                <GradientStop Color="#FFE5E4D0" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBox.Foreground>
+                    </TextBox>
 
 
 

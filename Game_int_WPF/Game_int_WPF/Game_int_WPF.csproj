@@ -13,6 +13,7 @@
     <None Remove="cinzel_regular.ttf" />
     <None Remove="exit.png" />
     <None Remove="exit2.png" />
+    <None Remove="icon.ico" />
     <None Remove="Name_game.png" />
     <None Remove="Name_game2.png" />
     <None Remove="Setting.png" />
@@ -32,6 +33,7 @@
     <Resource Include="avatar.png" />
     <Resource Include="exit.png" />
     <Resource Include="exit2.png" />
+    <Resource Include="icon.ico" />
     <Resource Include="Name_game.png" />
     <Resource Include="Name_game2.png" />
     <Resource Include="Setting.png" />
