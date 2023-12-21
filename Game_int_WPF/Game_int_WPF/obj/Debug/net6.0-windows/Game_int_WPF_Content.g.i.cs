@@ -9,6 +9,5 @@
 //------------------------------------------------------------------------------
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("font/cinzel_bold.ttf")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("font/cinzel_regular.ttf")]
 
 

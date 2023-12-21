@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,10 +25,12 @@ namespace Game_int_WPF
 
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
+
+
+
             DoubleAnimation dblAnim = new DoubleAnimation();
             dblAnim.From = 0.0;
             dblAnim.To = 0.91;
@@ -85,10 +88,10 @@ namespace Game_int_WPF
 
         private void Setting_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Setting_Window.Visibility = Visibility.Visible;
             image_button_exit.Visibility = Visibility.Collapsed;
             Setting.Visibility = Visibility.Collapsed;
             Start_game.Visibility = Visibility.Collapsed;
+            Setting_Window.Visibility = Visibility.Visible;
         }
 
         private void Label_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -104,6 +107,16 @@ namespace Game_int_WPF
             El_music.Background.Opacity = 0;
             El_Cntrl.Background.Opacity = 100;
 
+            lb_total_volume.Visibility = Visibility.Collapsed;
+            sld_total_volume.Visibility = Visibility.Collapsed;
+            tb_percent_total_volume.Visibility = Visibility.Collapsed;
+            lb_music.Visibility = Visibility.Collapsed;
+            sld_music.Visibility = Visibility.Collapsed;
+            tb_percent_music.Visibility = Visibility.Collapsed;
+            lb_sound_effects.Visibility = Visibility.Collapsed;
+            sld_sound_effects.Visibility = Visibility.Collapsed;
+            tb_percent_sound_effects.Visibility = Visibility.Collapsed;
+
             lb_up.Visibility = Visibility.Visible;
             lb_left.Visibility = Visibility.Visible;
             lb_right.Visibility = Visibility.Visible;
@@ -116,15 +129,7 @@ namespace Game_int_WPF
             cntrl_fire.Visibility = Visibility.Visible;
             cntrl_jump.Visibility = Visibility.Visible;
 
-            lb_total_volume.Visibility = Visibility.Collapsed;
-            sld_total_volume.Visibility = Visibility.Collapsed;
-            tb_percent_total_volume.Visibility = Visibility.Collapsed;
-            lb_music.Visibility = Visibility.Collapsed;
-            sld_music.Visibility = Visibility.Collapsed;
-            tb_percent_music.Visibility = Visibility.Collapsed;
-            lb_sound_effects.Visibility = Visibility.Collapsed;
-            sld_sound_effects.Visibility = Visibility.Collapsed;
-            tb_percent_sound_effects.Visibility = Visibility.Collapsed;
+
 
 
         }
@@ -156,6 +161,62 @@ namespace Game_int_WPF
             sld_sound_effects.Visibility = Visibility.Visible;
             tb_percent_sound_effects.Visibility = Visibility.Visible;
         }
+
+        private void Back_menu_profile_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Profile.Visibility = Visibility.Collapsed;
+            image_button_exit.Visibility = Visibility.Visible;
+            Setting.Visibility = Visibility.Visible;
+            Start_game.Visibility = Visibility.Visible;
+            Avatar.Visibility = Visibility.Visible;
+            Nickname.Visibility = Visibility.Visible;
+        }
+
+        private void Nickname_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+
+            image_button_exit.Visibility = Visibility.Collapsed;
+            Setting.Visibility = Visibility.Collapsed;
+            Start_game.Visibility = Visibility.Collapsed;
+            Avatar.Visibility = Visibility.Collapsed;
+            Nickname.Visibility = Visibility.Collapsed;
+            Setting_Window.Visibility = Visibility.Collapsed;
+            Profile.Visibility = Visibility.Visible;
+
+        }
+        /*
+         Для меню настроек 
+         В общем управление считываются со следующих  TextBox
+        cntrl_up/cntrl_jump - прыжок вверх
+        cntrl_left - влево
+        cntrl_right - вправо
+        cntrl_fire атаковать огонь
+
+          В меню настроек музыки можешь брать значения как с TextBox, так же и со слайдеров как тебе будет удобно
+        Для textbox переменные
+        tb_percent_total_volume - общая громкость
+        tb_percent_music - музыка
+        tb_percent_sound_effects -  звуковые эффекты
+
+        Для slider переменные
+        sld_total_volume - общая громкость
+        sld_music - музыка
+        sld_sound_effects -  звуковые эффекты
+
+         */
+
+        /*
+         Для меню Профиля
+        Nickname_Profile - Имя игрока переменная
+        
+        Запись статистики
+        tb_completed_lvl - количество пройденных уровней
+        tb_frags - количество побежденных врагов
+        tb_deaths - количество смертей
+
+        Чтобы изменить фото там есть картинка на нее надо повесить события загрузки фото
+        Edit_img_avatar
+ */
     }
 
 }

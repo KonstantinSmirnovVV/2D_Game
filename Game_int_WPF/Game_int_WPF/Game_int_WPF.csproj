@@ -11,28 +11,41 @@
     <None Remove="avatar.png" />
     <None Remove="cinzel_bold.ttf" />
     <None Remove="cinzel_regular.ttf" />
+    <None Remove="edit_avatar.png" />
+    <None Remove="edit_pero.png" />
     <None Remove="exit.png" />
     <None Remove="exit2.png" />
+    <None Remove="g11.png" />
     <None Remove="icon.ico" />
     <None Remove="Name_game.png" />
     <None Remove="Name_game2.png" />
+    <None Remove="red.png" />
+    <None Remove="redk.png" />
+    <None Remove="redk1.png" />
     <None Remove="Setting.png" />
     <None Remove="Start_game.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Font\cinzel_bold.ttf">
+    <Resource Include="edit_avatar.png" />
+    <Resource Include="Font\cinzel_bold.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Font\cinzel_regular.ttf">
+    </Resource>
+    <Resource Include="Font\cinzel_regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="avatar.png" />
+    <Resource Include="edit_pero.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="exit.png" />
     <Resource Include="exit2.png" />
+    <Resource Include="g11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="icon.ico" />
     <Resource Include="Name_game.png" />
     <Resource Include="Name_game2.png" />
